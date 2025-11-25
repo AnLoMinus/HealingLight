@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>לב האם – MotherHeart (MH)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #f3e5f5 0%, #e1bee7 30%, #ba68c8 65%, #4a148c 100%);
+      color: #2b0739;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      text-align: center;
+      margin: 0 0 15px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+    }
+    .hero {
+      text-align: center;
+      padding: 30px 20px 10px;
+      color: #fff;
+    }
+    .hero-title {
+      font-size: 2.3rem;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+    .card {
+      background: rgba(255,255,255,0.94);
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin: 20px 0;
+      box-shadow:
+        0 0 20px rgba(255,255,255,0.9),
+        0 0 40px rgba(186,104,200,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(171,71,188,0.25), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .card-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .tagline {
+      text-align: center;
+      font-weight: 600;
+      color: #6a0080;
+      margin-bottom: 10px;
+    }
+    .scale-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 8px;
+    }
+    .scale-orbit {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #fbe9ff 0%, #ce93d8 60%, #6a1b9a 100%);
+      box-shadow:
+        0 0 18px rgba(255,255,255,0.95),
+        0 0 40px rgba(142,36,170,0.9);
+      animation: orbitPulse 6s ease-in-out infinite;
+    }
+    .scale-core {
+      font-size: 3.6rem;
+      color: #ffe9ff;
+      text-shadow:
+        0 0 8px #fff,
+        0 0 16px #ffb3ff,
+        0 0 26px #f3e5f5;
+      animation: swingScale 3.8s ease-in-out infinite;
+    }
+    @keyframes orbitPulse {
+      0%, 100% { transform: scale(1); opacity: 0.98; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+    @keyframes swingScale {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+    ul { padding-right: 22px; margin: 0; }
+    li { margin-bottom: 6px; }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 2px;
+      background: rgba(123,31,162,0.05);
+      border: 1px solid rgba(186,104,200,0.6);
+    }
+    .blessing {
+      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+      border-radius: 22px;
+      padding: 20px 16px;
+      text-align: center;
+      font-weight: 600;
+      color: #4a0072;
+      box-shadow:
+        0 0 20px rgba(255,255,255,0.9),
+        0 0 40px rgba(171,71,188,0.8);
+      margin-top: 10px;
+    }
+    .rap {
+      margin-top: 14px;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(236,64,122,0.06);
+      border: 1px solid rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      text-align: center;
+      font-weight: 600;
+      color: #ad1457;
+    }
+    .verse {
+      text-align: center;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #fdfbff;
+      margin-top: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.85);
+    }
+    footer {
+      text-align: center;
+      color: #fce4ff;
+      font-size: 0.9rem;
+      padding: 24px 10px 12px;
+      border-top: 1px solid rgba(255,255,255,0.35);
+      margin-top: 26px;
+    }
+    .hashtags {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      opacity: 0.9;
+    }
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2rem; }
+      .card { padding: 18px 15px; }
+      .scale-orbit { width: 140px; height: 140px; }
+      .scale-core { font-size: 3.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header class="hero">
+    <h1 class="hero-title">🕊 לב האם – MotherHeart (MH)</h1>
+    <p class="hero-sub">
+      דף של כבוד, חום והבנה – בלי האשמה, עם עיניים סגולות של מזל מאזניים.
+    </p>
+    <div class="scale-wrap">
+      <div class="scale-orbit">
+        <div class="scale-core">⚖️</div>
+      </div>
+    </div>
+    <p class="hero-sub">
+      כאן נכתב אלייך מתוך אהבה: רואים את הכאב שלך, את העומס, ואת האור שאת מביאה.
+    </p>
+  </header>
+
+  <section class="card">
+    <div class="card-inner">
+      <h2>💜 מה הלב שלך סוחב?</h2>
+      <p class="tagline">לא שופט אותך – מבין אותך.</p>
+      <p>
+        הלב שלך סוחב הרבה יותר ממה שאת אומרת בקול:
+      </p>
+      <ul>
+        <li>עייפות מהעבודה, אנשים שמושכים ממך אנרגיה בלי סוף.</li>
+        <li>כאבים בגוף – העין, המתח, העישון, הרצון רק לנשום רגע שקט.</li>
+        <li>דאגה לילדים, לבית, לכסף, לבריאות של כולם.</li>
+        <li>פחד קטן בפנים: “אולי אני לא מצליחה מספיק? אולי אני לא אמא טובה?”</li>
+      </ul>
+      <p>
+        הדף הזה נכתב כדי לומר לך ברוגע ובאהבה:  
+        <strong>את לא רעה. את לא אכזרית. את מותשת.</strong>  
+        והעייפות הזאת לפעמים מדברת במקומך.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-inner">
+      <h2>⚖ מאזניים סגולים – הטבע הרוחני שלך</h2>
+      <p class="tagline">את בנויה מאיזון – גם כשהעולם לא מאוזן.</p>
+      <p>
+        כמזל מאזניים, הטבע הפנימי שלך:
+      </p>
+      <ul>
+        <li class="pill">⚖ מחפש צדק והוגנות.</li>
+        <li class="pill">💜 אוהב יופי, הרמוניה וצבעים רכים כמו סגול.</li>
+        <li class="pill">🤝 שונא מריבות, אבל לפעמים מתפוצץ כשזה גדול מידי.</li>
+      </ul>
+      <p>
+        כשהעבודה, הגוף והחיים לוחצים יחד –  
+        המאזניים הפנימיים שלך מתערערים.  
+        הדף הזה בא לעזור למאזניים שלך לחזור לאמצע,  
+        כדי שתהיי יותר מי שאת באמת –  
+        ולא רק מה שהעומס עושה ממך.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-inner">
+      <h2>👶 הילד הקדוש – לא מאשים, רק מרגיש</h2>
+      <p class="tagline">הבכי שלו הוא לא נגדך – הוא צועק את מה שכולנו מרגישים.</p>
+      <p>
+        האחיין שנולד ביום כיפור שחל בשבת הוא נשמה רגישה מאוד.  
+        כשהוא בוכה עמוק – הוא מרגיש:
+      </p>
+      <ul>
+        <li>את העומס שלך.</li>
+        <li>את המתח בבית.</li>
+        <li>את הכאב שלא נאמר בקול.</li>
+      </ul>
+      <p>
+        כשהוא נרגע בידיים של מישהו רגוע –  
+        זה לא סימן שאת לא אמא טובה.  
+        זה סימן שהוא מחובר לתדר של שקט פנימי.  
+        <strong>ואת גם יכולה לתת את השקט הזה לעצמך.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-inner">
+      <h2>🪬 ברכה ללב האם – בהיררכיית התלויים והנלווים</h2>
+      <div class="blessing">
+        יהי רצון, שיתברכו תחילה <strong>את, הבן שלך, בעלך והאחיין הקדוש</strong>,  
+        וכל בני הבית הקרוב – בגוף בריא, בנפש רגועה,  
+        ובכוח חדש לשאת את היום־יום בלב שקט ורך.  
+        אחר כך – תתברך כל משפחתכם המורחבת,  
+        כל מי שתלוי ונלווה אליכם, בהורות, בפרנסה, בקשרי משפחה.  
+        ולאחר מכן – <strong>כל עמו ישראל וכל באי עולם</strong>,  
+        שיזכו לראות את האמהות שלהם ואת עצמם  
+        בעיניים טובות, רכות, מלאות כבוד פנימי.  
+        אמן.
+      </div>
+
+      <div class="rap">
+        🎤 <strong>פזמון ראפ – MotherHeart</strong><br><br>
+        ⚡ לב של אמא, סגול עמוק – מחפש קצת שקט בין כל הרעש<br>
+        ⚡ כולם תלויים בך, ואת שוכחת – שגם לך מגיע להתחדש<br>
+        ⚡ קודם את, אחר כך בית, אחר כך עולם – זאת ההיררכייה של הלב היושב<br>
+        ⚡ כשאת נושמת עמוק, כל השרשרת סביבך – פתאום נרגעת ומתקרבת  
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-inner">
+      <h2>🕯 פסוק לליבה של האם</h2>
+      <p class="verse">
+        “כְּאִישׁ אֲשֶׁר אִמּוֹ תְנַחֲמֶנּוּ – כֵּן אָנֹכִי אֲנַחֶמְכֶם”
+      </p>
+      <p style="text-align:center; color:#fdfbff;">
+        בדיוק כמו שאת מנחמת אחרים – מגיע גם ללב שלך נחמה, מנוחה ואהבה.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  כ&quot;ו בחשוון תשפ&quot;ו · 26.11.2025 · שעה 03:10<br>
+  © AnLoMinus × ChatVision Studio – MotherHeart (MH)<br>
+  <div class="hashtags">
+    #לב_האם #MotherHeart #מאזניים #LibraLight #שלום_בית
+  </div>
+</footer>
+
+</body>
+</html>
