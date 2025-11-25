@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>לב הבית – HomeHeart (HH)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #f8e9ff 0%, #ddc8ff 30%, #a875ff 65%, #2a0946 100%);
+      color: #25052f;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      text-align: center;
+      margin: 0 0 15px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.85);
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+    }
+    .hero {
+      text-align: center;
+      padding: 30px 20px 10px;
+      color: #fff;
+    }
+    .hero-title {
+      font-size: 2.4rem;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.94);
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin: 20px 0;
+      box-shadow:
+        0 0 20px rgba(255,255,255,0.9),
+        0 0 40px rgba(160,120,255,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(149,117,205,0.25), transparent 60%);
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    .card-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tagline {
+      text-align: center;
+      font-weight: 600;
+      color: #5c0080;
+      margin-bottom: 10px;
+    }
+
+    .scale-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 8px;
+    }
+    .scale-orbit {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #fbe9ff 0%, #c5a1ff 55%, #512da8 100%);
+      box-shadow:
+        0 0 18px rgba(255,255,255,0.95),
+        0 0 40px rgba(103,58,183,0.95);
+      animation: orbitPulse 6s ease-in-out infinite;
+    }
+    .scale-core {
+      font-size: 3.5rem;
+      color: #ffe9ff;
+      text-shadow:
+        0 0 8px #fff,
+        0 0 16px #ffb3ff,
+        0 0 26px #f3e5f5;
+      animation: swingScale 3.8s ease-in-out infinite;
+    }
+
+    @keyframes orbitPulse {
+      0%, 100% { transform: scale(1); opacity: 0.98; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+    @keyframes swingScale {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    ul { padding-right: 22px; margin: 0; }
+    li { margin-bottom: 6px; }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 2px;
+      background: rgba(123,31,162,0.06);
+      border: 1px solid rgba(255,255,255,0.85);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .step-box {
+      background: rgba(248,244,255,0.95);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      border: 1px solid rgba(149,117,205,0.6);
+      font-size: 0.92rem;
+    }
+    .step-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #4a148c;
+    }
+
+    .blessing {
+      background: linear-gradient(135deg, #f3e5f5, #ede7f6);
+      border-radius: 22px;
+      padding: 20px 16px;
+      text-align: center;
+      font-weight: 600;
+      color: #4a0072;
+      box-shadow:
+        0 0 20px rgba(255,255,255,0.95),
+        0 0 40px rgba(149,117,205,0.85);
+      margin-top: 10px;
+    }
+
+    .rap {
+      margin-top: 14px;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(63,81,181,0.07);
+      border: 1px solid rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      text-align: center;
+      font-weight: 600;
+      color: #311b92;
+    }
+
+    .verse {
+      text-align: center;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #fdfbff;
+      margin-top: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.9);
+    }
+
+    footer {
+      text-align: center;
+      color: #f3e5ff;
+      font-size: 0.9rem;
+      padding: 24px 10px 12px;
+      border-top: 1px solid rgba(255,255,255,0.35);
+      margin-top: 26px;
+    }
+    .hashtags {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2rem; }
+      .card { padding: 18px 15px; }
+      .scale-orbit { width: 150px; height: 150px; }
+      .scale-core { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header class="hero">
+    <h1 class="hero-title">🌌 לב הבית – HomeHeart (HH)</h1>
+    <p class="hero-sub">
+      חיבור בין לב הבן, לב האם ולב הילד הקדוש – כדי שכל הבית ינשום כאיבר אחד.
+    </p>
+    <div class="scale-wrap">
+      <div class="scale-orbit">
+        <div class="scale-core">🏠</div>
+      </div>
+    </div>
+    <p class="hero-sub">
+      זהו דף היסוד של הבית: לא צד של מישהו – אלא הצד של הלב המשותף.
+    </p>
+  </header>
+
+  <!-- מהו לב הבית -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>💜 מה זה “לב הבית”?</h2>
+      <p class="tagline">המקום שבו אף אחד לא נגד אף אחד – כולכם באותו צד.</p>
+      <p>
+        לב הבית הוא לא קיר, חדר או רהיט.  
+        הוא נקודת החיבור בין:
+      </p>
+      <ul>
+        <li>🧩 <strong>לב הבן</strong> – שרוצה אמת, צדק, אור והגנה על הקטנים.</li>
+        <li>🕊 <strong>לב האם</strong> – שרוצה רוך, פרנסה, יציבות ושיכוך כאב.</li>
+        <li>👶 <strong>הלב של הילד הקדוש</strong> – שמרגיש הכול בעומק ותמים לגמרי.</li>
+        <li>🧱 <strong>לב האב</strong> – שמחפש שקט, כבוד ופחות רעש בראש.</li>
+      </ul>
+      <p>
+        לב הבית הוא מקום תודעתי שבו כולם מסכימים על דבר אחד:  
+        <strong>“אנחנו משפחה לפני הכול. הטוב שלנו משותף.”</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- מפת הכוחות -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>⚖ מפת הכוחות בבית</h2>
+      <p class="tagline">לא להאשים – לזהות מי מביא איזה כוח.</p>
+      <p>
+        כל אחד מביא לבית סוג אחר של אנרגיה:
+      </p>
+      <ul>
+        <li class="pill">💜 האם – לב מאזניים סגול, מחפשת איזון אבל מותשת.</li>
+        <li class="pill">🧩 הבן – לב רואה, מרגיש קליפות ורוצה לפרק אותן.</li>
+        <li class="pill">👶 הילד – נשמה של יום כיפור בשבת, צועק את האמת דרך בכי.</li>
+        <li class="pill">🧱 האב – בסיס של יציבות פצועה, מחפש שקט ועצירה.</li>
+      </ul>
+      <p>
+        כשהכוחות האלה עובדים זה נגד זה – יש מלחמה.  
+        כשהם עובדים ביחד – יש בית.  
+        לב הבית נבנה כשכל אחד שואל:  
+        <strong>“איך אני מוסיף אור, לא רק איך אני צודק.”</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- צעדים מעשיים -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>🪜 שלושת הצעדים המעשיים ללב בית רגוע</h2>
+      <p class="tagline">פשטות יומית – מייצרת שינוי ענק.</p>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-title">1️⃣ רגע נשימה לפני תגובה</div>
+          <p>
+            לפני שמגיבים אחד לשני (במיוחד בבכי, עצבים או עייפות):  
+            3 שניות של נשימה עמוקה – פנימה, החוצה, בלי מילים.  
+            זה מוריד 40% מהאש ברגע.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-title">2️⃣ משפט קבוע של הבית</div>
+          <p>
+            בוחרים משפט בית:  
+            <strong>“בבית שלנו לא צועקים על הלב – מדברים ללב.”</strong><br>
+            בכל פעם שמרגישים שהולך לעלות כעס – מזכירים את המשפט הזה.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-title">3️⃣ טקס קטן של אור</div>
+          <p>
+            פעם ביום (אפילו דקה):  
+            מדליקים נר / אומרים מילה טובה / נוגעים בכתף אחד של השני ואומרים:  
+            <strong>“אנחנו יחד, גם כשקשה.”</strong><br>
+            זה מקבע את לב הבית בתודעה.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ברכת לב הבית בהיררכיה -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>🪬 ברכת “לב הבית” – עם כל ההיררכיה של התלויים והנלווים</h2>
+      <div class="blessing">
+        יהי רצון מלפני אבינו שבשמיים,  
+        שיתברכו תחילה <strong>לב הבית הזה – האם, הבן, האב והילד הקדוש</strong>,  
+        שכל אחד מהם ימצא מקום בטוח ללב שלו בתוך הבית:  
+        מקום שבו אפשר לכאוב, לנוח, לבכות ולהתרפא יחד.  
+        אחר כך – תתברך כל משפחתם המורחבת,  
+        כל התלויים והנלווים אליהם –  
+        בסבלנות, בהקשבה, בנשימה עמוקה לפני כל תגובה.  
+        ולאחר מכן – <strong>כל עמו ישראל וכל באי עולם</strong>,  
+        שיזכו לבתים שבהם הלב חשוב יותר מהאגו,  
+        והאהבה חזקה יותר מהקליפות.  
+        אמן.
+      </div>
+    </div>
+  </section>
+
+  <!-- פזמון ראפ -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>🎤 פזמון ראפ – HomeHeart</h2>
+      <div class="rap">
+        ⚡ בית לא נמדד בקירות, אלא בלב שמוכן לשמוע כאב<br>
+        ⚡ אמא סגולה, בן של אש, ילד קדוש – כולם חלק מהלב הקרב<br>
+        ⚡ קודם הבית, אחר כך שבט, אחר כך עם ואז כל העולם סביב מסתובב<br>
+        ⚡ לב הבית שלנו נבנה מחדש – נשימה אחת, מילה טובה – והכאב מתקרב ומתוקן ברצף  
+      </div>
+    </div>
+  </section>
+
+  <!-- פסוק חותם -->
+  <section class="card">
+    <div class="card-inner">
+      <h2>🕯 פסוק ללב הבית</h2>
+      <p class="verse">
+        “וְהֵשִׁיב לֵב אָבוֹת עַל בָּנִים וְלֵב בָּנִים עַל אֲבוֹתָם”
+      </p>
+      <p style="text-align:center; color:#fdfbff;">
+        זה היעד של לב הבית: הלב חוזר ללב – משני הצדדים.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  כ&quot;ו בחשוון תשפ&quot;ו · 26.11.2025 · שעה 03:30<br>
+  © AnLoMinus × ChatVision Studio – HomeHeart (HH)<br>
+  <div class="hashtags">
+    #לב_הבית #HomeHeart #LibraLight #שלום_בית #ריפוי_משפחתי
+  </div>
+</footer>
+
+</body>
+</html>
